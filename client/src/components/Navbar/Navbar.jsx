@@ -12,27 +12,58 @@ const Navbar = () => {
     event.preventDefault();
     window.scrollBy({
       top: offset,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
     setIsOpen(false); // Close the menu on link click
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">
+    <nav className='navbar'>
+      <div className='navbar-logo'>
+        <img
+          src='https://nitdgp.ac.in/front/assets/images/logo.png'
+          alt='nitdgp-logo'
+          height='30px'
+        />
         <span>GYMKHANA</span>
       </div>
-      <div className="navbar-hamburger" onClick={toggleMenu}>
+      <div
+        className='navbar-hamburger'
+        onClick={toggleMenu}
+      >
         ☰
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="#program" onClick={(e) => scrollToSection(e, 800)}>Manifesto</a></li>
-        <li><a href="#candidates" onClick={(e) => scrollToSection(e, 1600)}>Candidates</a></li>
-        <li><a href="#about" onClick={(e) => scrollToSection(e, 2050)}>Answers</a></li>
-        <li className="navbar-contact"><button onClick={(e) => scrollToSection(e, 2500)}>Contact us</button></li>
+        <li>
+          <a
+            href='#program'
+            onClick={(e) => scrollToSection(e, 800)}
+          >
+            Manifesto
+          </a>
+        </li>
+        <li>
+          <a
+            href='#candidates'
+            onClick={(e) => scrollToSection(e, 1600)}
+          >
+            Candidates
+          </a>
+        </li>
+        <li>
+          <a
+            href='#about'
+            onClick={(e) => scrollToSection(e, 2050)}
+          >
+            Answers
+          </a>
+        </li>
+        <li className='navbar-contact'>
+          <button onClick={(e) => scrollToSection(e, 2500)}>Contact us</button>
+        </li>
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

@@ -1,110 +1,118 @@
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
 }
 
 .navbar-logo {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 800;
+  padding: 0 20px;
+  display: flex;
+  gap: 15px;
+  font-family: 'Montserrat';
+  letter-spacing: 1px;
 }
 
 .navbar-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
+  font-family: 'Poppins';
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links li {
-    display: inline;
+  display: inline;
 }
 
 .navbar-links a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
 .navbar-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
 .navbar-contact button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 2px solid #fff;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-contact button:hover {
-    background-color: #fff;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .navbar-hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #fff;
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 875px) {
-    .navbar-links {
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 10px;
-        gap: 10px;
-        display: none;
-    }
+  .navbar-links {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    gap: 10px;
+    display: none;
+  }
 
-    .navbar-links.open {
-        display: flex;
-    }
+  .navbar-links.open {
+    display: flex;
+  }
 
-    .navbar-hamburger {
-        display: block;
-    }
+  .navbar-hamburger {
+    display: block;
+  }
 
-    .navbar-links li {
-        width: 100%;
-        text-align: center;
-    }
+  .navbar-links li {
+    width: 100%;
+    text-align: center;
+  }
 
-    .navbar-contact button {
-        margin-top: 10px;
-    }
+  .navbar-contact button {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .navbar-links {
-        font-size: 0.9rem;
-    }
+  .navbar-links {
+    font-size: 0.9rem;
+  }
 
-    .navbar-contact button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
+  .navbar-contact button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
