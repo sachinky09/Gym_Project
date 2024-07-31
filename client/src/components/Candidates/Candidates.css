@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap');
-
-:root {
-    --dark-green-color: #1f2f16;
-    --feldgrau-color: #395b50;
-    --payne-color: #5a7684;
-    --powder-blue-color: #92afd7;
-    --lavender-color: #c5d1eb;
-    --background-color: #f8f9fa;
-    --card-background: #ffffff;
-    --card-hover-background: var(--powder-blue-color);
-    --text-color: var(--dark-green-color);
-    --text-light-color: var(--payne-color);
-    --border-color: var(--feldgrau-color);
-    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --box-shadow-hover: 0 4px 15px rgba(0, 0, 0, 0.15);
-    --transition-duration: 0.3s;
-}
-
-.candidates-container {
-    padding: 40px;
-=======
 .card-section {
->>>>>>> 7987bf232525680e6b00839d63d7e8b4d672d5c2
     text-align: center;
 }
 
