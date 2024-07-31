@@ -17,14 +17,6 @@
     --transition-duration: 0.3s;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
 .candidates-container {
     padding: 40px;
     text-align: center;

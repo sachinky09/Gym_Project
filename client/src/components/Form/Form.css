@@ -20,17 +20,8 @@
     --transition-duration: 0.3s;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
 .form-section {
     padding: 50px;
-    background-color: var(--background-color);
 }
 
 .form-heading {
