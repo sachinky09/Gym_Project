@@ -1,31 +1,33 @@
 import React from 'react';
 import './Candidates.css';
 
-const candidates = [
-  { name: 'Prasant Sahu', designation: 'President', photo: 'https://via.placeholder.com/150', details: 'Prasant is a senior software engineer with 10 years of experience in full stack development.' },
-  { name: 'Pragyan Karmakkar', designation: 'Vice President', photo: 'https://via.placeholder.com/150', details: 'Pragyan is a product manager with a knack for innovative product designs and customer satisfaction.' },
-  { name: 'Ankan Dutta', designation: 'Gen Secretary', photo: 'https://via.placeholder.com/150', details: 'Ankan is a UX designer who excels at creating intuitive user interfaces and experiences.' },
-  { name: 'Akash Gupta', designation: 'Ass. Gen Secretary (Sports)', photo: 'https://via.placeholder.com/150', details: 'Akash is a data scientist with expertise in machine learning and big data analytics.' },
-  { name: 'Arkarup Mitra', designation: 'Ass. Gen Secretary (Cultural)', photo: 'https://via.placeholder.com/150', details: 'Arkarup is a marketing specialist with experience in digital marketing and brand management.' },
-];
+const CardComponent = () => {
+  const candidates = [
+    { name: 'Candidate 1', designation: 'Designation 1', imgSrc: 'https://picsum.photos/250/400?random=1' },
+    { name: 'Candidate 2', designation: 'Designation 2', imgSrc: 'https://picsum.photos/250/400?random=2' },
+    { name: 'Candidate 3', designation: 'Designation 3', imgSrc: 'https://picsum.photos/250/400?random=3' },
+    { name: 'Candidate 4', designation: 'Designation 4', imgSrc: 'https://picsum.photos/250/400?random=4' },
+    { name: 'Candidate 5', designation: 'Designation 5', imgSrc: 'https://picsum.photos/250/400?random=5' },
+  ];
 
-const Candidates = () => {
   return (
-    <div className="candidates-container">
-      <h2>Our Candidates</h2>
-      <div className="candidates-grid">
+    <div className="card-section">
+      <h2 className="section-heading">Our Candidates</h2>
+      <div className="card-container">
         {candidates.map((candidate, index) => (
-          <div className="candidate-card" key={index}>
-            <div className="candidate-photo" style={{ backgroundImage: `url(${candidate.photo})` }}></div>
-            <h3>{candidate.designation}</h3>
-            <div className="candidate-details">
-              <p>{candidate.details}</p>
+          <div key={index} className="card">
+            <img src={candidate.imgSrc} alt={candidate.name} />
+            <div className="card-info">
+              <h3>{candidate.name}</h3>
+              <p>{candidate.designation}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default Candidates;
+export default CardComponent;
+
+
