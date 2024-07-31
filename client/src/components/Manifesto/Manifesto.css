@@ -43,7 +43,8 @@
 }
 
 .manifesto-card {
-    background: var(--card-bg);
+    /*background: var(--card-bg);*/
+    background: var(--feldgrau);
     border: 2px solid var(--border-color);
     border-radius: 12px;
     box-shadow: var(--box-shadow);
@@ -55,20 +56,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
 }
 
 .manifesto-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--box-shadow-hover);
-    background: var(--light-green);
+    background: var(--feldgrau);
 }
 
 .manifesto-card-header {
-    padding: 20px;
     background: var(--feldgrau);
     color: #fff;
     width: 100%;
     text-align: center;
+    padding: 20px;
 }
 
 .manifesto-title {
@@ -78,26 +80,15 @@
     text-transform: uppercase;
 }
 
-.manifesto-card-placeholder,
 .manifesto-card-details {
-    padding: 20px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.manifesto-card-placeholder {
-    color: var(--text-light);
-    font-size: 1.2em;
-}
-
-.manifesto-card-details {
+    color: var(--text-dark);
     background: var(--light-green);
-    color: var(--text-light);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 20px;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition), visibility var(--transition);
