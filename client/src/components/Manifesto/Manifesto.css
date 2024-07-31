@@ -20,16 +20,9 @@
     /* Background color for click text */
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-dark);
-    background: var(--background);
-    margin: 0;
-    padding: 0;
-}
-
 .manifesto-container {
     padding: 50px;
+    color: var(--dark-green);
     max-width: 1200px;
     margin: auto;
 }
@@ -38,7 +31,6 @@ body {
     font-size: 3.5em;
     margin-bottom: 40px;
     font-family: 'Montserrat', sans-serif;
-    color: var(--dark-green);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;

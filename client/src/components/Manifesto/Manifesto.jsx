@@ -35,7 +35,6 @@ const Manifesto = () => {
                         </div>
                         <div className={`manifesto-card-placeholder ${expandedIndex === index ? 'hidden' : ''}`}>
                             
-                            <div className="click-to-view-details">Click here to know more</div>
                         </div>
                         <div className="manifesto-card-details">
                             <p className="manifesto-description">{item.description}</p>

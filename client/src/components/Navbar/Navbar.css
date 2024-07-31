@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 50px;
+  padding: 0px 12vw;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -29,7 +29,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin: 0;
   padding: 0;
 }
@@ -47,18 +47,18 @@
 
 .navbar-links a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
 }
 
 .navbar-contact button {
   background-color: transparent;
+  font-family: 'Montserrat';
   border: 2px solid #fff;
   margin: 10px;
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 3px;
   transition: background-color 0.3s, color 0.3s;
 }
 

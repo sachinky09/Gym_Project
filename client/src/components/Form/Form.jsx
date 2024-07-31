@@ -5,7 +5,6 @@ const FormSection = () => {
   return (
     <div className="form-section">
       <div className="form-heading">
-        <h2>Contact Us</h2>
         <h1>Get in Touch</h1>
       </div>
       <div className="content">
