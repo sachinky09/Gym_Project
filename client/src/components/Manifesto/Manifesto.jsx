@@ -13,7 +13,7 @@ const manifestoItems = [
     { title: "Strengthen community engagement and participation.", description: "We aim to increase community involvement and participation in decision-making processes." },
 ];
 
-const ManifestoPage = () => {
+const Manifesto= () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleCardClick = (index) => {
@@ -41,4 +41,4 @@ const ManifestoPage = () => {
     );
 };
 
-export default ManifestoPage;
+export default Manifesto;

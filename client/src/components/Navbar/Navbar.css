@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 10;
 }
@@ -20,7 +20,8 @@
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
     margin: 0;
     padding: 0;
 }
@@ -66,7 +67,7 @@
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 875px) {
     .navbar-links {
         flex-direction: column;
         position: absolute;

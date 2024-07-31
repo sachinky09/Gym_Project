@@ -1,11 +1,10 @@
-import Navbar from './Components/Navbar.jsx';
-import Carousel from './Components/Carousel.jsx';
-import Manifesto from './Components/Manifesto.jsx';
-import Candidates from './Components/Candidates.jsx';
-import QandA from './Components/QandA.jsx';
-import Form from './Components/Form.jsx';
-import Footer from './Components/Footer.jsx';
-import './App.css';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Carousel from './components/Carousel/Carousel.jsx';
+import Manifesto from './components/Manifesto/Manifesto.jsx';
+import Candidates from './components/Candidates/Candidates.jsx';
+import QandA from './components/QandA/QandA.jsx';
+import Form from './components/Form/Form.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
