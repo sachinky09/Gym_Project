@@ -80,16 +80,19 @@ body {
 
 .candidate-details {
     padding: 10px;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    transition: max-height var(--transition-duration) ease, padding var(--transition-duration) ease;
 }
 
 .candidate-card:hover .candidate-details {
-    display: block;
+    max-height: 100px;
+    padding: 10px;
 }
 
 .candidate-card:hover h3 {
-    display: none;
+    color: transparent;
 }
 
 .candidate-details p {

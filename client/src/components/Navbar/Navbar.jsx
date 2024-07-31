@@ -8,6 +8,15 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const scrollToSection = (event, offset) => {
+    event.preventDefault();
+    window.scrollBy({
+      top: offset,
+      behavior: 'smooth'
+    });
+    setIsOpen(false); // Close the menu on link click
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -17,12 +26,10 @@ const Navbar = () => {
         ☰
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#program">Program</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#campus">Campus</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li className="navbar-contact"><button>Contact us</button></li>
+        <li><a href="#program" onClick={(e) => scrollToSection(e, 800)}>Manifesto</a></li>
+        <li><a href="#candidates" onClick={(e) => scrollToSection(e, 1600)}>Candidates</a></li>
+        <li><a href="#about" onClick={(e) => scrollToSection(e, 2050)}>Answers</a></li>
+        <li className="navbar-contact"><button onClick={(e) => scrollToSection(e, 2500)}>Contact us</button></li>
       </ul>
     </nav>
   );

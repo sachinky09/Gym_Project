@@ -13,7 +13,7 @@ const manifestoItems = [
     { title: "Strengthen community engagement and participation.", description: "We aim to increase community involvement and participation in decision-making processes." },
 ];
 
-const Manifesto= () => {
+const Manifesto = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleCardClick = (index) => {
@@ -25,18 +25,20 @@ const Manifesto= () => {
             <h1 className="manifesto-heading">OUR MANIFESTO</h1>
             <div className="manifesto-grid">
                 {manifestoItems.map((item, index) => (
-                    <div key={index} className="manifesto-card" onClick={() => handleCardClick(index)}>
+                    <div 
+                        key={index} 
+                        className={`manifesto-card ${expandedIndex === index ? 'expanded' : ''}`} 
+                        onClick={() => handleCardClick(index)}
+                    >
                         <div className="manifesto-card-header">
                             <h3 className="manifesto-title">{item.title}</h3>
                         </div>
-                        <div className={`manifesto-card-body ${expandedIndex === index ? 'expanded' : ''}`}>
+                        <div className="manifesto-card-body">
                             <p className="manifesto-description">{item.description}</p>
                         </div>
                     </div>
                 ))}
             </div>
-            <br/><br/>
-            <hr/>
         </div>
     );
 };

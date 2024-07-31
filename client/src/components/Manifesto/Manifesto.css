@@ -4,7 +4,6 @@
     --dark-green-color: #1f2f16;
     --feldgrau-color: #395b50;
     --payne-color: #5a7684;
-    --powder-blue-color: #92afd7;
     --lavender-color: #c5d1eb;
     --background-color: #f8f9fa;
     --card-background: #ffffff;
@@ -49,14 +48,13 @@ body {
 }
 
 .manifesto-card {
-    position: relative;
     background: var(--card-background);
     border: 2px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
     cursor: pointer;
-    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, background-color var(--transition-duration) ease;
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, background-color var(--transition-duration) ease, max-height var(--transition-duration) ease;
 }
 
 .manifesto-card:hover {
@@ -85,7 +83,7 @@ body {
     padding: 0 25px;
 }
 
-.manifesto-card-body.expanded {
+.manifesto-card.expanded .manifesto-card-body {
     max-height: 250px;
     padding: 25px;
     background-color: var(--lavender-color);
@@ -96,30 +94,6 @@ body {
     color: var(--text-light-color);
     font-family: 'Roboto', sans-serif;
     margin: 0;
-}
-
-.manifesto-button {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.2em;
-    padding: 12px 25px;
-    background-color: var(--dark-green-color);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
-    box-shadow: var(--box-shadow);
-}
-
-.manifesto-button:hover {
-    background-color: var(--payne-color);
-    box-shadow: var(--box-shadow-hover);
-}
-
-.manifesto-emphasis {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    color: var(--payne-color);
 }
 
 @media (max-width: 768px) {
