@@ -33,7 +33,11 @@ const Manifesto = () => {
                         <div className="manifesto-card-header">
                             <h3 className="manifesto-title">{item.title}</h3>
                         </div>
-                        <div className="manifesto-card-body">
+                        <div className={`manifesto-card-placeholder ${expandedIndex === index ? 'hidden' : ''}`}>
+                            
+                            <div className="click-to-view-details">Click here to know more</div>
+                        </div>
+                        <div className="manifesto-card-details">
                             <p className="manifesto-description">{item.description}</p>
                         </div>
                     </div>
@@ -44,3 +48,5 @@ const Manifesto = () => {
 };
 
 export default Manifesto;
+
+

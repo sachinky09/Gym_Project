@@ -20,7 +20,15 @@ const FormSection = () => {
             <div className="contact-details">
               <p><span role="img" aria-label="email">📧</span> Contact@GreatStack.dev</p>
               <p><span role="img" aria-label="phone">📞</span> +1 123-456-7890</p>
-              <p><span role="img" aria-label="location">📍</span> 77 Massachusetts Ave, Cambridge, MA 02139, United States</p>
+              <p><span role="img" aria-label="location">📍</span>National Institute of Technology Durgapur
+              <br/>
+              Mahatma Gandhi Avenue,
+              <br/>
+              Durgapur,
+              <br/>
+              West Bengal 713209,
+              <br/>
+              India.</p>
             </div>
           </div>
         </div>

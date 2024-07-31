@@ -1,25 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap');
 
 :root {
-    --dark-green-color: #1f2f16;
-    --feldgrau-color: #395b50;
-    --payne-color: #5a7684;
-    --lavender-color: #c5d1eb;
-    --background-color: #f8f9fa;
-    --card-background: #ffffff;
-    --card-hover-background: #e0f7fa;
-    --text-color: #263238;
-    --text-light-color: #607d8b;
+    --dark-green: #1f2f16;
+    --feldgrau: #395b50;
+    --light-green: #d0f0c0;
+    --background: #f8f9fa;
+    --card-bg: #fff;
+    --text-dark: #263238;
+    --text-light: #607d8b;
     --border-color: #80cbc4;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
-    --transition-duration: 0.3s;
+    --transition: 0.4s;
+    --click-text-font: 'Oswald', sans-serif;
+    /* Added font variable for click text */
+    --click-text-color: #ffffff;
+    /* Color for click text */
+    --click-bg-color: #007bff;
+    /* Background color for click text */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--text-dark);
+    background: var(--background);
     margin: 0;
     padding: 0;
 }
@@ -27,15 +31,14 @@ body {
 .manifesto-container {
     padding: 50px;
     max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--background-color);
+    margin: auto;
 }
 
 .manifesto-heading {
     font-size: 3.5em;
     margin-bottom: 40px;
     font-family: 'Montserrat', sans-serif;
-    color: var(--dark-green-color);
+    color: var(--dark-green);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -48,25 +51,32 @@ body {
 }
 
 .manifesto-card {
-    background: var(--card-background);
+    background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 12px;
-    overflow: hidden;
     box-shadow: var(--box-shadow);
     cursor: pointer;
-    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, background-color var(--transition-duration) ease, max-height var(--transition-duration) ease;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .manifesto-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--box-shadow-hover);
-    background-color: var(--card-hover-background);
+    background: var(--light-green);
 }
 
 .manifesto-card-header {
-    padding: 25px;
-    background: var(--feldgrau-color);
+    padding: 20px;
+    background: var(--feldgrau);
     color: #fff;
+    width: 100%;
+    text-align: center;
 }
 
 .manifesto-title {
@@ -76,24 +86,58 @@ body {
     text-transform: uppercase;
 }
 
-.manifesto-card-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-duration) ease, padding var(--transition-duration) ease;
-    padding: 0 25px;
+.manifesto-card-placeholder,
+.manifesto-card-details {
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-.manifesto-card.expanded .manifesto-card-body {
-    max-height: 250px;
-    padding: 25px;
-    background-color: var(--lavender-color);
+.manifesto-card-placeholder {
+    color: var(--text-light);
+    font-size: 1.2em;
+}
+
+.manifesto-card-details {
+    background: var(--light-green);
+    color: var(--text-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+.manifesto-card.expanded .manifesto-card-details {
+    opacity: 1;
+    visibility: visible;
 }
 
 .manifesto-description {
     font-size: 1.2em;
-    color: var(--text-light-color);
     font-family: 'Roboto', sans-serif;
     margin: 0;
+}
+
+.click-to-view {
+    font-family: var(--click-text-font);
+    font-size: 1.1em;
+    color: var(--click-text-color);
+    background: var(--click-bg-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    margin: 20px;
+}
+
+.click-to-view:hover {
+    background: #0056b3;
+    color: #e0e0e0;
 }
 
 @media (max-width: 768px) {
