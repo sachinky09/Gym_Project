@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&family=Oswald:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --dark-green-color: #1f2f16;
+    --feldgrau-color: #395b50;
+    --payne-color: #5a7684;
+    --powder-blue-color: #92afd7;
+    --lavender-color: #c5d1eb;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --card-hover-background: #e0f7fa;
+    --text-color: #263238;
+    --text-light-color: #607d8b;
+    --border-color: #80cbc4;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
+    --transition-duration: 0.3s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.manifesto-container {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+}
+
+.manifesto-heading {
+    font-size: 3.5em;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-green-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.manifesto-card {
+    position: relative;
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, background-color var(--transition-duration) ease;
+}
+
+.manifesto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+    background-color: var(--card-hover-background);
+}
+
+.manifesto-card-header {
+    padding: 25px;
+    background: var(--feldgrau-color);
+    color: #fff;
+}
+
+.manifesto-title {
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.manifesto-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-duration) ease, padding var(--transition-duration) ease;
+    padding: 0 25px;
+}
+
+.manifesto-card-body.expanded {
+    max-height: 250px;
+    padding: 25px;
+    background-color: var(--lavender-color);
+}
+
+.manifesto-description {
+    font-size: 1.2em;
+    color: var(--text-light-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.manifesto-button {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    background-color: var(--dark-green-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+    box-shadow: var(--box-shadow);
+}
+
+.manifesto-button:hover {
+    background-color: var(--payne-color);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.manifesto-emphasis {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: var(--payne-color);
+}
+
+@media (max-width: 768px) {
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+    }
+}
