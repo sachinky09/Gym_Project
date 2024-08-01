@@ -2,9 +2,9 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Carousel from './components/Carousel/Carousel.jsx';
 import Manifesto from './components/Manifesto/Manifesto.jsx';
 import Candidates from './components/Candidates/Candidates.jsx';
-import QandA from './components/QandA/QandA.jsx';
 import Form from './components/Form/Form.jsx';
 import Footer from './components/Footer/Footer.jsx';
+import Answer from './components/Answer/Answer.jsx';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
      <Carousel/>
      <Manifesto/>
      <Candidates/>
-     <QandA/>
+     <Answer />
      <Form/>
      <Footer/>
     </div>
