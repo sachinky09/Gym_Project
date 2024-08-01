@@ -21,7 +21,6 @@
 }
 
 .form-section {
-  padding: 0px;
   max-width: 1200px;
   margin: auto;
   padding: 50px 40px;
@@ -142,5 +141,10 @@
 @media (width < 800px) {
   .content {
     flex-direction: column;
+    padding: 0px;
   } 
+
+  .form-section {
+    padding: 30px;
+  }
 }

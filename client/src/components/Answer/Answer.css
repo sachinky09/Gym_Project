@@ -1,15 +1,17 @@
 .answer-container {
   color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
-  max-width: 1200px;
+  padding: 30px;
   margin: 50px auto;
-    background-color: #0f0f0f;
+  display: flex;
 }
 
 .answer-container > .content {
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
+  background-color: #0f0f0f;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .question {
@@ -54,9 +56,9 @@
   font-size: 1.7rem;
   font-family: 'Kanit';
 }
-@media(max-width: 500px){
+@media (max-width: 500px) {
   .answer {
-      font-size: 1.2rem;
-      font-family: 'Kanit';
-    }
+    font-size: 1.2rem;
+    font-family: 'Kanit';
+  }
 }
