@@ -1,11 +1,20 @@
 const mongoose = require('mongoose');
 
+// TODO: schema validation
+
 const QuestionSchema = new mongoose.Schema({
     name: String,
-    message: String,
+    question: {
+        type: String,
+        required: true,
+    },
     date: { 
         type: Date,
         default: Date.now
+    },
+    answer: {
+        type: String,
+        default: null
     }
 });
 
