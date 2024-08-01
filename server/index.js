@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const rateLimit = require('express-rate-limit');
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 // Rate limiter middleware
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  max: 10, // Limit each IP to 100 requests per windowMs
   message: 'Too many requests from this IP, please try again later.'
 });
 
@@ -56,10 +57,23 @@ app.post('/ask', async (req, res) => {
 
 app.get('/questions', async (req, res) => {
   try {
+    // uncomment during production
+    // const questions = await Question.find({ answer: {$ne: null}});
     const questions = await Question.find();
     res.json(questions);
   } catch (err) {
     res.status(500).send(err.message);
+  }
+});
+
+// Route to answer a question
+app.post('/answer', async (req, res) => {
+  try {
+    const { questionId, answer } = req.body;
+    await Question.findByIdAndUpdate(questionId, { answer });
+    res.status(200).send('Question answered successfully');
+  } catch (err) {
+    res.status(400).send(err.message);
   }
 });
 
