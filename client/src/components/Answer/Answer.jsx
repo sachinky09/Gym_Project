@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Element } from 'react-scroll';
 import axios from 'axios';
 import './Answer.css';
 
@@ -34,7 +35,9 @@ function Answer() {
             className='avatar'
           />
           <div className='profile-text'>
-            <p className='name'>Anon.</p>
+            <p className='name'>
+              <Element name='answer'>Anon.</Element>
+            </p>
           </div>
         </div>
         <p className='question'>

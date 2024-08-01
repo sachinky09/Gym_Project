@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Element } from 'react-scroll';
 import './Manifesto.css';
 
 const manifestoItems = [
@@ -60,9 +61,11 @@ const Manifesto = () => {
     <div className='manifesto-container'>
       <h1 className='manifesto-heading'>Our Manifesto</h1>
       <div className='manifesto-subheading'>
-        We believe in a future where technology and innovation drive positive
-        change. Our mission is to empower individuals and communities through
-        cutting-edge solutions and sustainable practices
+        <Element name='manifesto'>
+          We believe in a future where technology and innovation drive positive
+          change. Our mission is to empower individuals and communities through
+          cutting-edge solutions and sustainable practices
+        </Element>
       </div>
       <div className='manifesto-grid'>
         {manifestoItems.map((item, index) => (

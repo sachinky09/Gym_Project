@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, animateScroll } from 'react-scroll';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,9 +11,10 @@ const Navbar = () => {
 
   const scrollToSection = (event, offset) => {
     event.preventDefault();
-    window.scrollBy({
-      top: offset,
-      behavior: 'smooth',
+    
+    animateScroll.scrollTo(offset, {
+      duration: 500,
+      smooth: true
     });
     setIsOpen(false); // Close the menu on link click
   };
@@ -35,31 +37,28 @@ const Navbar = () => {
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
         <li>
-          <a
-            href='#program'
-            onClick={(e) => scrollToSection(e, 800)}
+          <Link
+            to='manifesto' smooth={true} duration={500} offset={-150}
           >
             Manifesto
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href='#candidates'
-            onClick={(e) => scrollToSection(e, 1600)}
+          <Link
+            to='candidates' smooth={true} duration={500} offset={-100}
           >
             Candidates
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href='#about'
-            onClick={(e) => scrollToSection(e, 2050)}
+          <Link
+            to='answer' smooth={true} duration={500} offset={-140}
           >
             Answers
-          </a>
+          </Link>
         </li>
         <li className='navbar-contact'>
-          <button onClick={(e) => scrollToSection(e, 2500)}>Contact us</button>
+          <button onClick={(e) => scrollToSection(e, 3350)}>Contact us</button>
         </li>
       </ul>
     </nav>
