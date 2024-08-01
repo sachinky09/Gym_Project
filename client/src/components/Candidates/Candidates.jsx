@@ -20,12 +20,12 @@ const CardComponent = () => {
     },
     {
       name: "Akash Gupta",
-      designation: "General Secretary(Sports)",
+      designation: " Ass. General Secretary(Sports)",
       imgSrc: "https://picsum.photos/250/400?random=4",
     },
     {
       name: "Arkorup Mitra",
-      designation: "General Secretary(Cultural)",
+      designation: " Ass. General Secretary(Cultural)",
       imgSrc: "https://picsum.photos/250/400?random=5",
     },
   ];
