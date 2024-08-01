@@ -4,10 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px;
+  padding: 90px 40px;
   background-color: black;
   position: relative;
   color: white;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .section-heading {
@@ -18,24 +20,24 @@
   color: #b1a695;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-align: left;
-  width: 100%;
+  align-self: flex-start;
   max-width: 1200px;
+  line-height: 0.9;
 }
 
 .intro-paragraph {
+  font-size: 1.5rem;
   font-family: 'Kanit', sans-serif;
   margin-bottom: 40px;
   max-width: 1100px;
   position: relative;
   padding: 0 50px;
   font-weight: 300;
-  font-size: 1.5rem;
   color: #eff4ee;
   text-transform: none;
 }
 
-.intro-paragraph:before {
+/* .intro-paragraph:before {
   content: '“';
   font-size: 3em;
   position: absolute;
@@ -51,7 +53,7 @@
   right: 10px;
   bottom: 0;
   color: #b1a695;
-}
+} */
 
 .card-container {
   display: flex;
@@ -141,7 +143,6 @@
 
   .card {
     width: 90%;
-    height: 300px;
     max-width: 320px;
     display: block;
   }
@@ -156,21 +157,5 @@
 
   .card-info h3 {
     font-size: 18px;
-  }
-
-  .intro-paragraph {
-    font-size: 1em;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .intro-paragraph:before {
-    font-size: 2em;
-    left: 5px;
-  }
-
-  .intro-paragraph:after {
-    font-size: 2em;
-    right: 5px;
   }
 }

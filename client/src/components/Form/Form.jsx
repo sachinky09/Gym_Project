@@ -1,7 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './Form.css';
+import { toast } from 'react-toastify';
 
 const FormSection = () => {
+  const [name, setName] = useState('Anon.');
+  const [question, setQuestion] = useState('');
+
+  const toastConfig = {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'dark',
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:4000/ask', {
+        name,
+        question,
+      });
+      console.log(response.data);
+      setName('Anon.');
+      setQuestion('');
+
+      toast.success('Reponse recorded', toastConfig);
+    } catch (error) {
+      console.error('there was an error submitting your question.', error);
+      toast.error('Error occured', toastConfig);
+    }
+  };
+
   return (
     <div className='form-section'>
       <div className='form-heading'>
@@ -9,7 +44,7 @@ const FormSection = () => {
       </div>
       <div className='content'>
         <div className='contact-form'>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2 className='contact-form-heading'>Let's Talk</h2>
             <p className='contact-form-subheading'>
               Send us an email with a few details about your project.
@@ -18,9 +53,18 @@ const FormSection = () => {
             <input
               type='text'
               placeholder='Enter your name'
+              value={name}
+              name='name'
+              onChange={(e) => setName(e.target.value)}
             />
             <label>Write your question here</label>
-            <textarea placeholder='Enter your message'></textarea>
+            <textarea
+              placeholder='Enter your message'
+              value={question}
+              name='question'
+              onChange={(e) => setQuestion(e.target.value)}
+              required
+            ></textarea>
 
             <button type='submit'>Submit now →</button>
           </form>

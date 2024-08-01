@@ -21,10 +21,15 @@
 }
 
 .manifesto-container {
-    padding: 70px 20px;
+    padding: 80px 40px;
     color: white;
     max-width: 1200px;
+    background-color: black;
     margin: auto;
+}
+
+.manifesto-heading {
+    line-height: 0.9;
 }
 
 .manifesto-heading, .manifesto-subheading {

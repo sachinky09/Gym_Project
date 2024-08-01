@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { Element } from 'react-scroll';
+import axios from 'axios';
 import './Answer.css';
 
 // Function to get the avatar URL
@@ -7,6 +10,20 @@ function getAvatarURL() {
 
 function Answer() {
   const avatarURL = getAvatarURL();
+  const [answers, setAnswers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/questions');
+        setAnswers(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  });
 
   return (
     <div className='answer-container'>
@@ -18,7 +35,9 @@ function Answer() {
             className='avatar'
           />
           <div className='profile-text'>
-            <p className='name'>Anon.</p>
+            <p className='name'>
+              <Element name='answer'>Anon.</Element>
+            </p>
           </div>
         </div>
         <p className='question'>
