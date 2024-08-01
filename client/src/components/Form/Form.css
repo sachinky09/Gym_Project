@@ -46,12 +46,11 @@
 
 .content {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .contact-info {
-  width: 35%;
   padding: 30px;
   border-radius: 3px;
   border-top: 5px solid #b3b096;
@@ -85,11 +84,11 @@
 }
 
 .contact-form {
-  width: 45%;
   padding-bottom: 30px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
+  min-width: 45vw;
 }
 
 .contact-form form {
@@ -140,15 +139,8 @@
   background-color: var(--button-hover-color);
 }
 
-@media (max-width: 768px) {
+@media (width < 800px) {
   .content {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-info,
-  .contact-form {
-    width: 100%;
-    margin-bottom: 30px;
-  }
+  } 
 }
