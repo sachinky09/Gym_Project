@@ -17,7 +17,7 @@
   font-size: 1.5rem;
   color: #b1a695;
   font-weight: 800;
-  padding: 0 20px;
+  padding: 5px 20px;
   display: flex;
   gap: 15px;
   font-family: 'Montserrat';
@@ -84,7 +84,7 @@
   .navbar-links {
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.8);

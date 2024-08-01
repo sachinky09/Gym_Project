@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Element } from 'react-scroll';
 import './Manifesto.css';
 
@@ -59,7 +60,21 @@ const Manifesto = () => {
 
   return (
     <div className='manifesto-container'>
-      <h1 className='manifesto-heading'>Our Manifesto</h1>
+      <motion.div
+        initial={{ opacity: 0,
+          x: -30,
+         }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1,
+            delay: 0.1,
+          },
+        }}
+      >
+        <h1 className='manifesto-heading'>Our Manifesto</h1>
+      </motion.div>
       <div className='manifesto-subheading'>
         <Element name='manifesto'>
           We believe in a future where technology and innovation drive positive
@@ -69,26 +84,33 @@ const Manifesto = () => {
       </div>
       <div className='manifesto-grid'>
         {manifestoItems.map((item, index) => (
-          <div
-            key={index}
-            className={`manifesto-card ${
-              expandedIndex === index ? 'expanded' : ''
-            }`}
-            onClick={() => handleCardClick(index)}
-          >
-            <div className='manifesto-card-header'>
-              <h3 className='manifesto-title'>{item.title}</h3>
-            </div>
-
-            <div
-              className={`manifesto-card-placeholder ${
-                expandedIndex === index ? 'hidden' : ''
+          <motion.div
+              key={index}
+              className={`manifesto-card ${
+                expandedIndex === index ? 'expanded' : ''
               }`}
-            ></div>
-            <div className='manifesto-card-details'>
-              <p className='manifesto-description'>{item.description}</p>
-            </div>
-          </div>
+              onClick={() => handleCardClick(index)}
+initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: 2,
+              },
+            }}
+            >
+              <div className='manifesto-card-header'>
+                <h3 className='manifesto-title'>{item.title}</h3>
+              </div>
+
+              <div
+                className={`manifesto-card-placeholder ${
+                  expandedIndex === index ? 'hidden' : ''
+                }`}
+              ></div>
+              <div className='manifesto-card-details'>
+                <p className='manifesto-description'>{item.description}</p>
+              </div>
+          </motion.div>
         ))}
       </div>
     </div>

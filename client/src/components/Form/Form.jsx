@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 import './Form.css';
 import { toast } from 'react-toastify';
 
@@ -40,7 +41,19 @@ const FormSection = () => {
   return (
     <div className='form-section'>
       <div className='form-heading'>
-        <h1>Get in Touch</h1>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              delay: 0.1,
+            },
+          }}
+        >
+          <h1>Get in Touch</h1>
+        </motion.div>
       </div>
       <div className='content'>
         <div className='contact-form'>

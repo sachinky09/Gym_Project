@@ -55,7 +55,7 @@
 .manifesto-card {
     /*background: var(--card-bg);*/
     border: 2px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: transform var(--transition), box-shadow var(--transition), background var(--transition);

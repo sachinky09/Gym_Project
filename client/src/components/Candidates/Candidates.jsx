@@ -1,5 +1,6 @@
 import React from 'react';
 import { Element } from 'react-scroll';
+import { motion } from 'framer-motion';
 import './Candidates.css';
 
 const CardComponent = () => {
@@ -34,9 +35,19 @@ const CardComponent = () => {
   return (
     <div className='card-section'>
       <h2 className='section-heading'>
-        <Element name='candidates'>
-          Our Candidates
-        </Element>
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              delay: 0.1,
+            },
+          }}
+        >
+          <Element name='candidates'>Our Candidates</Element>
+        </motion.div>
       </h2>
       <p className='manifesto-subheading'>
         Introducing our gymkhana election candidates! Each of these students is
@@ -46,9 +57,16 @@ const CardComponent = () => {
       </p>
       <div className='card-container'>
         {candidates.map((candidate, index) => (
-          <div
+          <motion.div
             key={index}
             className='card'
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: 2,
+              },
+            }}
           >
             <img
               src={candidate.imgSrc}
@@ -58,7 +76,7 @@ const CardComponent = () => {
               <h3>{candidate.name}</h3>
               <p>{candidate.designation}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
