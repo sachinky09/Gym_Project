@@ -13,11 +13,8 @@
     --box-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.2);
     --transition: 0.4s;
     --click-text-font: 'Oswald', sans-serif;
-    /* Added font variable for click text */
     --click-text-color: #ffffff;
-    /* Color for click text */
     --click-bg-color: #007bff;
-    /* Background color for click text */
 }
 
 .manifesto-container {
@@ -136,5 +133,10 @@
 @media (max-width: 768px) {
     .manifesto-grid {
         grid-template-columns: 1fr;
+    }
+}
+@media (max-width : 450px){
+    .manifesto-heading{
+        font-size: 3rem;
     }
 }
