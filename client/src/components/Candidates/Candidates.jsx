@@ -33,11 +33,11 @@ const CardComponent = () => {
   return (
     <div className="card-section">
       <h2 className="section-heading">Our Candidates</h2>
-      <p className="intro-paragraph">
+      <p className="manifesto-subheading">
         Introducing our gymkhana election candidates! Each of these students is
         dedicated to enhancing our college experience with their innovative
         ideas and leadership skills. Get to know them better and learn about
-        their plans to make our campus a more vibrant and engaging place.  
+        their plans to make our campus a more vibrant and engaging place.
       </p>
       <div className="card-container">
         {candidates.map((candidate, index) => (
