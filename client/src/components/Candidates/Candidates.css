@@ -19,7 +19,6 @@
   font-weight: bolder;
   color: #b1a695;
   letter-spacing: 2px;
-  text-transform: uppercase;
   align-self: flex-start;
   max-width: 1200px;
   line-height: 0.9;
@@ -124,7 +123,6 @@
   font-size: 16px;
   font-weight: 400;
   font-family: 'Roboto';
-  text-transform: uppercase;
 }
 
 @media (max-width: 1200px) {
