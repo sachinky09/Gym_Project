@@ -1,23 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
 .card-section {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+    position: relative;
+    color: white;
 }
 
 .section-heading {
-    font-size: 2em;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 3.5em;
+    margin: 20px 0;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bolder;
+    color: #b1a695;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 20px;
+}
+
+.intro-paragraph {
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0;
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    color: white;
+}
+
+.intro-paragraph:before {
+    content: '“';
+    font-size: 3em;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    color: #b1a695;
+}
+
+.intro-paragraph:after {
+    content: '”';
+    font-size: 3em;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: #b1a695;
 }
 
 .card-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
     padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: center;
 }
 
 .card {
+    display: inline-block;
     position: relative;
     width: 250px;
     height: 400px;
@@ -46,10 +96,11 @@
     width: 100%;
     padding: 10px;
     background: rgba(0, 0, 0, 0);
-    color: black;
+    color: whitesmoke;
     backdrop-filter: blur(8px);
     text-align: center;
     transition: background 0.3s ease;
+    font-family: 'Playfair Display', serif;
 }
 
 .card-info:hover {
@@ -62,12 +113,20 @@
 }
 
 .card-info h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 5px;
+    font-weight: 700;
 }
 
 .card-info p {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+    .card-container {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -75,13 +134,14 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        white-space: normal;
     }
 
     .card {
         width: 90%;
         height: 300px;
         max-width: 320px;
-        transition: transform 0.3s ease;
+        display: block;
     }
 
     .card:hover {
@@ -89,10 +149,26 @@
     }
 
     .card-info {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .card-info h3 {
-        font-size: 16px;
+        font-size: 18px;
+    }
+
+    .intro-paragraph {
+        font-size: 1em;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .intro-paragraph:before {
+        font-size: 2em;
+        left: 5px;
+    }
+
+    .intro-paragraph:after {
+        font-size: 2em;
+        right: 5px;
     }
 }

@@ -1,18 +1,44 @@
-import React from 'react';
-import './Candidates.css';
+import React from "react";
+import "./Candidates.css";
 
 const CardComponent = () => {
   const candidates = [
-    { name: 'Candidate 1', designation: 'Designation 1', imgSrc: 'https://picsum.photos/250/400?random=1' },
-    { name: 'Candidate 2', designation: 'Designation 2', imgSrc: 'https://picsum.photos/250/400?random=2' },
-    { name: 'Candidate 3', designation: 'Designation 3', imgSrc: 'https://picsum.photos/250/400?random=3' },
-    { name: 'Candidate 4', designation: 'Designation 4', imgSrc: 'https://picsum.photos/250/400?random=4' },
-    { name: 'Candidate 5', designation: 'Designation 5', imgSrc: 'https://picsum.photos/250/400?random=5' },
+    {
+      name: "Prasant Sahu",
+      designation: "President",
+      imgSrc: "https://picsum.photos/250/400?random=1",
+    },
+    {
+      name: "Pragyan Karmakar",
+      designation: "Vice President",
+      imgSrc: "https://picsum.photos/250/400?random=2",
+    },
+    {
+      name: "Ankan Dutta",
+      designation: "General Secretary",
+      imgSrc: "https://picsum.photos/250/400?random=3",
+    },
+    {
+      name: "Akash Gupta",
+      designation: "General Secretary(Sports)",
+      imgSrc: "https://picsum.photos/250/400?random=4",
+    },
+    {
+      name: "Arkorup Mitra",
+      designation: "General Secretary(Cultural)",
+      imgSrc: "https://picsum.photos/250/400?random=5",
+    },
   ];
 
   return (
     <div className="card-section">
       <h2 className="section-heading">Our Candidates</h2>
+      <p className="intro-paragraph">
+        Introducing our gymkhana election candidates! Each of these students is
+        dedicated to enhancing our college experience with their innovative
+        ideas and leadership skills. Get to know them better and learn about
+        their plans to make our campus a more vibrant and engaging place.  
+      </p>
       <div className="card-container">
         {candidates.map((candidate, index) => (
           <div key={index} className="card">
@@ -29,5 +55,3 @@ const CardComponent = () => {
 };
 
 export default CardComponent;
-
-
