@@ -36,25 +36,6 @@
   color: #eff4ee;
   text-transform: none;
 }
-
-/* .intro-paragraph:before {
-  content: '“';
-  font-size: 3em;
-  position: absolute;
-  left: 10px;
-  top: 0;
-  color: #b1a695;
-}
-
-.intro-paragraph:after {
-  content: '”';
-  font-size: 3em;
-  position: absolute;
-  right: 10px;
-  bottom: 0;
-  color: #b1a695;
-} */
-
 .card-container {
   display: flex;
   gap: 20px;
@@ -140,6 +121,19 @@
     gap: 20px;
     white-space: normal;
   }
+  
+    .section-heading {
+      font-size: 3em;
+      margin: 20px 0;
+      font-family: 'Kanit', sans-serif;
+      font-weight: bolder;
+      color: #b1a695;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      align-self: flex-start;
+      max-width: 1200px;
+      line-height: 0.9;
+    }
 
   .card {
     width: 90%;
@@ -156,6 +150,6 @@
   }
 
   .card-info h3 {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
