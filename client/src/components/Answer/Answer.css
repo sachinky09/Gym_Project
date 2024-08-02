@@ -1,4 +1,6 @@
 .answer-container {
+  display:flex;
+  justify-content: center;
   color: #ffffff;
   padding: 30px;
   margin: 50px auto;
