@@ -11,19 +11,46 @@ function getAvatarURL() {
 function Answer() {
   const avatarURL = getAvatarURL();
   const [answers, setAnswers] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:4000/questions');
-        setAnswers(response.data);
-        console.log(response.data);
+        const answerFiltered = response.data
+          .filter((query) => query['answer'] != null)
+          .reverse();
+        setAnswers(answerFiltered);
+        console.log(answerFiltered);
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
-  });
+  }, []);
+
+  useEffect(() => {
+    if (answers.length === 0) return;
+
+    const answerLength = answers[currentIndex]?.answer.length;
+    const delay = answerLength * 50 + 2000; // 50ms per char + 2s
+
+    const timer = setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % answers.length);
+    }, delay);
+
+    console.log(currentIndex);
+
+    return () => clearTimeout(timer);
+  }, [answers, currentIndex]);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? answers.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % answers.length);
+  };
 
   return (
     <div className='answer-container'>
@@ -36,26 +63,37 @@ function Answer() {
           />
           <div className='profile-text'>
             <p className='name'>
-              <Element name='answer'>Anon.</Element>
+              <Element name='answer'>{answers[currentIndex]?.name}</Element>
             </p>
           </div>
         </div>
-        <p className='question'>
-          "What are your plans to improve student engagement and participation
-          in campus activities, especially for those who feel disconnected or
-          overwhelmed?"
-        </p>
-        <p className='answer'>
-          To improve student engagement and participation, I plan to enhance
-          communication through social media and a dedicated mobile app,
-          organize diverse and inclusive events, and introduce peer mentorship
-          programs. We will expand mental health and wellness initiatives,
-          establish regular feedback mechanisms, and offer more volunteer and
-          leadership opportunities. Additionally, tailored support programs for
-          international and non-resident students will help them integrate
-          better. These strategies aim to create a vibrant and inclusive campus
-          community where every student feels connected and valued.
-        </p>
+        <p className='question'>{answers[currentIndex]?.question}</p>
+        <p className='answer'>{answers[currentIndex]?.answer}</p>
+        <div className='nav-arrows'>
+          <div className='left' onClick={handlePrev}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              height='30px'
+              viewBox='0 -960 960 960'
+              width='30px'
+              fill='#e8eaed'
+            >
+              <path d='M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z' />
+            </svg>
+          </div>
+
+          <div className='right' onClick={handleNext}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              height='30px'
+              viewBox='0 -960 960 960'
+              width='30px'
+              fill='#e8eaed'
+            >
+              <path d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   );
