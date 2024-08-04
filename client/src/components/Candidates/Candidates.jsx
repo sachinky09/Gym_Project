@@ -8,27 +8,27 @@ const CardComponent = () => {
     {
       name: 'Prasant Sahu',
       designation: 'President',
-      imgSrc: 'https://picsum.photos/250/400?random=1',
+      imgSrc: process.env.PUBLIC_URL + '/presi.jpg',
     },
     {
-      name: 'Pragyan Karmakar',
+      name: 'Shivanshu Kumar',
       designation: 'Vice President',
-      imgSrc: 'https://picsum.photos/250/400?random=2',
+      imgSrc: process.env.PUBLIC_URL + '/vice_presi.jpg',
     },
     {
       name: 'Ankan Dutta',
       designation: 'General Secretary',
-      imgSrc: 'https://picsum.photos/250/400?random=3',
+      imgSrc: process.env.PUBLIC_URL + '/gen_sec.jpg',
     },
     {
-      name: 'Akash Gupta',
+      name: 'Sujal Kumar',
       designation: 'General Secretary(Sports)',
-      imgSrc: 'https://picsum.photos/250/400?random=4',
+      imgSrc: process.env.PUBLIC_URL + '/ags_sports.jpg',
     },
     {
       name: 'Arkorup Mitra',
       designation: 'General Secretary(Cultural)',
-      imgSrc: 'https://picsum.photos/250/400?random=5',
+      imgSrc: process.env.PUBLIC_URL + '/ags_cultural.jpg',
     },
   ];
 
