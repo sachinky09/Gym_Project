@@ -70,7 +70,10 @@ function Answer() {
         <p className='question'>{answers[currentIndex]?.question}</p>
         <p className='answer'>{answers[currentIndex]?.answer}</p>
         <div className='nav-arrows'>
-          <div className='left' onClick={handlePrev}>
+          <div
+            className='left'
+            onClick={handlePrev}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               height='30px'
@@ -82,7 +85,10 @@ function Answer() {
             </svg>
           </div>
 
-          <div className='right' onClick={handleNext}>
+          <div
+            className='right'
+            onClick={handleNext}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               height='30px'

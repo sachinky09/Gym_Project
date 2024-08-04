@@ -57,9 +57,7 @@ app.post('/ask', async (req, res) => {
 
 app.get('/questions', async (req, res) => {
   try {
-    // uncomment during production
-    // const questions = await Question.find({ answer: {$ne: null}});
-    const questions = await Question.find();
+    const questions = await Question.find({ answer: {$ne: null}});
     res.json(questions);
   } catch (err) {
     res.status(500).send(err.message);
